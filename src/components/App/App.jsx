@@ -1,44 +1,30 @@
+import { Route, Routes } from 'react-router-dom'
+import HomePage from '../../pages/HomePage/HomePage'
+import MoviesPage from '../../pages/MoviesPage/MoviesPage'
+import MovieDetailsPage from '../../pages/MovieDetailsPage/MovieDetailsPage'
+import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage'
+import MovieCast from '../MovieCast/MovieCast'
+import MovieReviews from '../MovieReviews/MovieReviews'
+
+
+
 import css from './App.module.css'
-import { useState, useId, useEffect } from 'react'
-import ContactForm from '../ContactForm/ContactForm'
-import ContactList from '../ContactList/ContactList'
-import SearchBox from '../SearchBox/SearchBox'
+
 
 export default function App() {
 
-  const initialContacts = JSON.parse(window.localStorage.getItem("saved-contacts")) || [
-    { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-    { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-    { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-    { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-  ];
-  
-  const [contacts, setContacts] = useState(initialContacts);
-  
-  const [filter, setFilter] = useState("");
-
-  useEffect(() => {
-    window.localStorage.setItem("saved-contacts", JSON.stringify(contacts))
-  }, [contacts]);
-
-  const visibleContacts = contacts.filter((contact) => contact.name.toLowerCase().includes(filter.toLowerCase()));
-  
-  const addContact = (newContact) => {
-    setContacts((prevContacts) => {
-      return [...prevContacts, newContact]
-    })
-  };
-  const deleteContact = (contactId) => {
-    setContacts((prevContacts) => { return prevContacts.filter((contact) => contact.id !== contactId) })
-  }
-
   return (
-    <div className={css.phonebookContainer}>
-      <h1 className={css.title}>Phonebook</h1>
-      <ContactForm addContact={addContact}/>
-      <SearchBox value={filter} onChange={setFilter} />
-      <ContactList contacts={visibleContacts} onDelete={deleteContact} />
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/movies' element={<MoviesPage />} />
+        <Route path='/movies/:movieId' element={<MovieDetailsPage />}>
+          <Route path='/movies/:movieId/cast' element={<MovieCast />} />
+          <Route path='/movies/:movieId/reviews' element={<MovieReviews />} />
+        </Route>
+        <Route path='*' element={<NotFoundPage/>} />
+      </Routes>
+    </>
   )
 }
 
