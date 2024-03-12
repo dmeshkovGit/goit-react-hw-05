@@ -1,0 +1,36 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 10px 8px;
+  gap: 10px;
+  max-width: 250px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.inputLabel {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+.input {
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.submitBtn {
+  height: 30px;
+  margin: 0 auto;
+}
+
+.error {
+  color: orangered;
+  font-size: 14px;
+}
