@@ -5,16 +5,17 @@ import MovieDetailsPage from '../../pages/MovieDetailsPage/MovieDetailsPage'
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage'
 import MovieCast from '../MovieCast/MovieCast'
 import MovieReviews from '../MovieReviews/MovieReviews'
-
-
-
+import Navigation from '../Navigation/Navigation'
 import css from './App.module.css'
 
 
-export default function App() {
 
+
+export default function App() {
   return (
     <>
+      <Navigation/>
+
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/movies' element={<MoviesPage />} />
