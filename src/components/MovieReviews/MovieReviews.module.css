@@ -1,3 +1,29 @@
+.list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reviewCard {
+  background-color: rgba(42, 58, 63, 0.697);
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 5px 8px;
+}
 
+.author {
+  color: rgb(245, 167, 12);
+  margin: 0;
+  padding-bottom: 5px;
+}
 
+.date {
+  color: rgba(245, 167, 12, 0.751);
+  padding-bottom: 5px;
+  padding-bottom: 5px;
+}
 
+.content {
+  color: rgba(240, 204, 131, 0.81);
+  padding-bottom: 5px;
+}

@@ -1,0 +1,30 @@
+.castList {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.actorCard {
+  width: calc((100% - 50px) / 6);
+  background-color: rgba(42, 58, 63, 0.697);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.actorImage {
+  width: 100%;
+}
+
+.actorName {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(245, 167, 12);
+}
+
+.actorChar {
+  font-size: 14px;
+  color: rgba(245, 167, 12, 0.717);
+}

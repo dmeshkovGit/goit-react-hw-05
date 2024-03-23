@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px rgba(42, 58, 63, 0.697) solid;
+  background-color: rgba(42, 58, 63, 0.697);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.poster {
+  width: 100%;
+}
+.posterImg {
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  color: rgb(245, 167, 12);
+}
+
+.realese {
+  font-size: 14px;
+  color: rgba(245, 167, 12, 0.717);
+}
+
+.vote {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: rgb(245, 167, 12);
+  border-radius: 50px;
+  padding: 6px 4px;
+  color: black;
+  font-size: 16px;
+}

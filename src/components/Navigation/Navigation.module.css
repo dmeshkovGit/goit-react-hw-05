@@ -1,9 +1,73 @@
+.mainWrapper {
+  background-color: rgb(42, 58, 63);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: 0px 6px 10px 1px rgba(0, 0, 0, 0.52);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.navWrapper {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  gap: 12px;
+}
+
 .link {
+  display: block;
+  padding: 2px;
   text-decoration: none;
-  color: black;
+  color: rgb(246, 237, 180);
+  z-index: 2;
 }
 
 .active {
-  text-decoration: underline;
-  color: orangered;
+  color: rgb(245, 167, 12);
+}
+
+.homeGhost {
+  position: absolute;
+  left: -4px;
+  z-index: 1;
+  background-color: rgb(32 23 8);
+  border-radius: 9px;
+  width: 66px;
+  height: 32px;
+  transition: transform 250ms ease-in-out;
+}
+
+.moviesGhost {
+  position: absolute;
+  right: -3px;
+  z-index: 1;
+  background-color: rgb(32 23 8);
+  border-radius: 9px;
+  width: 76px;
+  height: 32px;
+  transition: transform 250ms ease-in-out;
+}
+
+.homeGhost.ghostOnMovies {
+  display: none;
+}
+.moviesGhost.ghostOnHome {
+  display: none;
+}
+
+.notActive:hover + .homeGhost {
+  transform: translateX(69px);
+  width: 76px;
+}
+
+.notActive:hover + .moviesGhost {
+  transform: translateX(-79px);
+  width: 66px;
 }

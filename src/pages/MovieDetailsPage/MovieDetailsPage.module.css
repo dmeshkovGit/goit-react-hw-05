@@ -1,0 +1,82 @@
+.link {
+  text-decoration: none;
+  color: rgb(246, 237, 180);
+}
+
+.active {
+  color: rgb(245, 167, 12);
+}
+
+.mainWrapper {
+  padding: 0 10px;
+  margin: 10px auto;
+  width: 80%;
+}
+
+.movieDetailWrapper {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.poster {
+  width: 20%;
+}
+
+.movieInfoWrapper {
+  padding-left: 5px;
+}
+
+.backLink {
+  text-decoration: none;
+  background-color: rgba(60, 58, 58, 0.832);
+  margin: 0;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(246, 237, 180);
+  border-radius: 9px;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  margin: 0;
+}
+
+.backLink:hover {
+  color: rgb(245, 167, 12);
+}
+
+.addInfoList {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(42, 58, 63);
+  box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.52);
+  font-size: 16px;
+  padding: 3px;
+}
+
+.line {
+  border-color: rgb(42, 58, 63);
+}
+
+.title {
+  margin: 0;
+  color: black;
+  font-size: 20px;
+}
+
+.tagLine {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.714);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.infoList {
+  font-size: 16px;
+}

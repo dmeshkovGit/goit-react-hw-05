@@ -2,41 +2,55 @@ import { useEffect, useState } from "react";
 import css from "./MovieCast.module.css";
 import { useParams } from "react-router-dom";
 import { getMovieCreditsById } from "../../helpers/movies-api";
-
+import Loader from "../../components/Loader/Loader"
 
 export default function MovieCast({ }) {
     const [data, setData] = useState({});
     const { movieId } = useParams();
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
     async function getData() {
         try {
+            setIsLoading(true);
             const data = await getMovieCreditsById(movieId);
             setData(data);
         } catch (error) {
             console.log(error);
+        }
+          finally {
+            setIsLoading(false);
         }
         };
         getData()
     }, [movieId]) 
     
     return (
-        <div>
-            
-            {data.cast &&
-                <ul>
-                {data.cast.map((actor) => {
-                    return (
-                         <li key={actor.id}>
-                         <h3>{actor.name}</h3>
-                            <img src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name} />
-                            <p>{actor.character}</p>
-                         </li>
-                    )
+        <>
+{isLoading ? 
+<Loader /> :
+<div>
+{data.cast &&
+<ul className={css.castList}>
+     {data.cast.map((actor) => {
+    const makeImgSrc = () => {
+     if (actor.profile_path) {
+        return `https://image.tmdb.org/t/p/w500${actor.profile_path}`
+     } else {
+         return "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
+     }
+    };  
+    return (
+     <li className={css.actorCard} key={actor.id}>
+            <img className={css.actorImage} src={makeImgSrc()} alt={actor.name} />
+            <h3 className={css.actorName}>{actor.name}</h3>
+        <p className={css.actorChar}>As: {actor.character}</p>
+    </li>
+        )
                 })}
             </ul>}
-            
-       
         </div>
+            }
+        </>
     )
 }

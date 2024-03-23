@@ -46,5 +46,5 @@ export const getMovieReviewsById = async (id) => {
         params: {
             api_key: KEY,
     }});
-    return response.data;
+    return response.data.results;
 }

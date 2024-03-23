@@ -13,5 +13,6 @@ image {
 }
 
 body {
-  padding: 4px;
+  background-color: rgb(80 96 103);
+  padding-top: 51px;
 }

@@ -1,0 +1,43 @@
+.wrapper {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 350px;
+  display: flex;
+  position: relative;
+}
+
+.input {
+  border-radius: 9px;
+  border: none;
+  outline: none;
+  padding: 6px 26px 6px 12px;
+  font-size: 16px;
+  background-color: rgb(60, 58, 58);
+  color: rgb(245, 167, 12);
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 3px;
+}
+
+.btnIcon {
+  color: rgb(246, 237, 180);
+  width: 20px;
+  height: 20px;
+  transition: all 250ms ease-in-out;
+}
+
+.btn:hover > .btnIcon {
+  color: rgb(245, 167, 12);
+}
