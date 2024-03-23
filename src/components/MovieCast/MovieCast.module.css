@@ -22,9 +22,11 @@
   font-size: 16px;
   font-weight: 600;
   color: rgb(245, 167, 12);
+  padding: 4px;
 }
 
 .actorChar {
   font-size: 14px;
   color: rgba(245, 167, 12, 0.717);
+  padding: 4px;
 }
