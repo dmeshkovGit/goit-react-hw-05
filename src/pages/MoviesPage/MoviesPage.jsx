@@ -13,13 +13,19 @@ export default function MoviesPage({ }) {
     const [searchQuery, setSearchQuery] = useState(searchValue ?? "");
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    
+    const [isMovies, setIsMovies] = useState(true)
+
     useEffect(() => {
     async function getData() {
         try {
             setIsLoading(true);
             const data = await getMovies(searchQuery);
-            setData(data);
+            setData(data.results);
+            if (data.results.length === 0) {
+                setIsMovies(false)
+            } else {
+                setIsMovies(true)
+            }
         } catch (error) {
             console.log(error);
         }
@@ -27,7 +33,9 @@ export default function MoviesPage({ }) {
             setIsLoading(false);
         }
         };
-        getData()
+        if (searchQuery !== "") {
+            getData()
+        }
 },[searchQuery]) 
     
     const handleSubmit = (e) => {
@@ -37,6 +45,7 @@ export default function MoviesPage({ }) {
         setParams(params);
         e.target.reset();
     };
+    
 
     return (
         <div className={css.wrapper}>
@@ -46,7 +55,9 @@ export default function MoviesPage({ }) {
             </form>
           {isLoading ?
                 <Loader /> :
-                <MovieList movies={data} />}
+                (isMovies ?
+                <MovieList movies={data} /> :
+                <div>There are no movies with this title</div>)}
         </div>
     )
 }

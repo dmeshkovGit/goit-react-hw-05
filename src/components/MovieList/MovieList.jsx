@@ -5,7 +5,7 @@ import MovieCard from "../MovieCard/MovieCard";
 
 export default function MovieList({ movies }) {
   const location = useLocation(); 
-    return (
+  return (
 <div>
 <ul className={css.list}>
 {movies.map((movie) => {

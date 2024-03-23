@@ -30,7 +30,7 @@ export default function MovieCast({ }) {
 {isLoading ? 
 <Loader /> :
 <div>
-{data.cast &&
+{data.cast && (data.cast.length === 0 ? <h3>We have no information about cast of this movie</h3> : 
 <ul className={css.castList}>
      {data.cast.map((actor) => {
     const makeImgSrc = () => {
@@ -48,7 +48,8 @@ export default function MovieCast({ }) {
     </li>
         )
                 })}
-            </ul>}
+            </ul>)                
+}
         </div>
             }
         </>

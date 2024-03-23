@@ -25,7 +25,6 @@ export default function MovieReviews({ }) {
         
         getData()
     }, [movieId]) 
-console.log(data);
     return (
     <>
         {(data.length === 0) ? <h3>We have no reviews on this movie yet</h3> :

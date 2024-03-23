@@ -13,7 +13,7 @@ export const getMovies = async (query = "batman", page = 1) => {
             language: "en-US",
             page: page
     }});
-    return response.data.results;
+    return response.data;
 }
 
 export const getTrendingMovies = async () => {
